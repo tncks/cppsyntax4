@@ -1,0 +1,33 @@
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+
+
+using namespace std;
+
+int main()
+{
+	string szString1("문자열!");
+
+	string szString2(szString1);
+
+	string szString3;
+
+	string szString4(10, 'A');
+
+	string szString5("라면을 끓이자!", 4);
+	
+	const char *szTemp = "bskaslsfxxglisjgisjgjs";
+
+	string szString6(szTemp + 4, szTemp + 11);
+
+	cout << szString1 << endl << endl;
+	cout << szString2 << endl << endl;
+	cout << szString3 << endl << endl;
+	cout << szString4 << endl << endl;
+	cout << szString5 << endl << endl;
+	cout << szString6 << endl << endl;
+
+	return 0;
+}
+

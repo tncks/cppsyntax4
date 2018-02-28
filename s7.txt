@@ -1,0 +1,44 @@
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	string szNewString;
+	string szString[] = { "라볶이", "김밥", "라면", "스테이크" };
+
+	for (int i = 0; i < szString[0].length(); ++i)
+	{
+		cout << szString[0].at(i);
+	}
+
+	cout << endl;
+
+	szNewString.assign(szString[1]);
+	cout << "szNewString : " << szNewString << endl;
+	szNewString.assign("rainbow", 4);
+	cout << "szNewString : " << szNewString << endl << endl;
+
+	szNewString.append(szString[2]);
+	cout << "szNewString : " << szNewString << endl;
+	szNewString.append("rainbow", 4);
+	cout << "szNewString : " << szNewString << endl << endl;
+
+	char Buffer[128] = "브레이크";
+	szString[3].copy(Buffer, 4, 0);
+	cout << "Buffer : " << Buffer << endl << endl;
+
+	cout << "바꾸기 전 : " << endl;
+	cout << "szSTring[1] : " << szString[1] << endl;
+	cout << "szString[3] : " << szString[3] << endl << endl;
+	szString[1].swap(szString[3]);
+
+	cout << "바꾼 후 " << endl;
+	cout << "szString[1] : " << szString[1] << endl;
+	cout << "szString[3] : " << szString[3] << endl;
+
+	return 0;
+}
+

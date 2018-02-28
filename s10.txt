@@ -1,0 +1,45 @@
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+	string szString = "지금은 저녁시간!!!";
+
+	ofstream WriteFile("NowTime.txt");
+	WriteFile << szString.length() << endl;
+	WriteFile << szString << endl;
+	WriteFile.close();
+
+	ifstream ReadFile("NowTime3.txt");
+	try
+	{
+		if (ReadFile.is_open() == false)
+		{
+			throw false;
+		}
+		
+		int iLength;
+		ReadFile >> iLength;
+		ReadFile.get();
+
+		char *pBuffer = new char[iLength + 1];
+		ReadFile.getline(pBuffer, iLength + 1);
+		string szResult = pBuffer;
+		delete[] pBuffer;
+
+		cout << szResult << endl;
+		ReadFile.close();
+	}
+	catch (bool)
+	{
+		cout << "파일 읽기 실패!" << endl;
+	}
+	
+
+	return 0;
+}
+

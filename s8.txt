@@ -1,0 +1,39 @@
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	string szString = "대국";
+
+	szString.insert(2, "한민");
+	cout << szString << endl;
+	szString.insert(8, "은 역사 깊은 나라다.", 2);
+	cout << szString << endl;
+	
+	string szTemp = "우리가 살고 있는 ";
+	szString.insert(0, szTemp);
+	cout << szString << endl << endl;
+
+	szString.push_back('!');
+	cout << szString << endl << endl;
+
+	szTemp = szString;
+	szString.erase();
+	cout << szString << endl;
+	szString.swap(szTemp);
+	szString.erase(szString.length() - 1, 1);
+	cout << szString << endl << endl;
+
+	szString.replace(0, 17, "2017년에도 ");
+	szString += " 평화롭다.";
+	cout << szString << endl << endl;
+
+	szTemp = szString.substr(11, 8);
+	cout << szTemp << endl << endl;
+
+	return 0;
+}
+

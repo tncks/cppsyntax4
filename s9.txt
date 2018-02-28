@@ -1,0 +1,24 @@
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+#include <io.h>
+#include <fcntl.h>
+
+using namespace std;
+
+int main()
+{
+	_setmode(_fileno(stdout), _O_U16TEXT);
+	_setmode(_fileno(stdin), _O_U16TEXT);
+
+	wstring wszString;
+	wcout << "wszString : ";
+	getline(wcin, wszString);
+	wcout << "wszString : " << wszString << endl << endl;
+
+	wszString.assign(L"새로운 문자열!");
+	wcout << "wszString : " << wszString << endl;
+
+	return 0;
+}
+

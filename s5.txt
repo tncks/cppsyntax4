@@ -1,0 +1,31 @@
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+
+
+using namespace std;
+
+int main()
+{
+	string szString = "대한민국";
+
+	szString.resize(12, '~');
+	cout << "szString : " << szString << endl;
+
+	cout << "szString이 할당받은 크기 : " << szString.capacity() << endl << endl;
+
+	szString.clear();
+	cout << "szSTring : " << szString << endl;
+	cout << "szString이 할당받은 크기 : " << szString.capacity() << endl << endl;
+
+	if (szString.empty() == true)
+	{
+		cout << "빈 문자열입니다!" << endl;
+	}
+	else {
+		cout << "빈 문자열이 아닙니다." << endl;
+	}
+
+	return 0;
+}
+

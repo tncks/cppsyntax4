@@ -1,0 +1,32 @@
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+
+
+using namespace std;
+
+int main()
+{
+	string szString = "대한민국";
+
+	cout << szString.length() << endl;
+	cout << szString.size() << endl << endl;
+
+	cout << "szString이 할당받은 크기 : " << szString.capacity() << endl << endl;
+
+	cout << szString.max_size() << endl;
+	cout << string::npos << endl << endl;
+
+	szString.resize(4);
+	cout << szString << endl;
+
+	cout << "szString이 할당받은 크기 : " << szString.capacity() << endl << endl;
+
+	szString.reserve(50);
+	cout << szString << endl;
+	cout << "szString이 할당받은 크기 : " << szString.capacity() << endl << endl;
+
+
+	return 0;
+}
+
